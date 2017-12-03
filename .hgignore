@@ -1,0 +1,5 @@
+syntax: glob
+.stack-work
+_site
+_cache
+.sass-cache

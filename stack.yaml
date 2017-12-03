@@ -1,0 +1,11 @@
+resolver: lts-9.14
+
+packages:
+  - '.'
+
+extra-deps:
+  - hakyll-sass-0.2.3
+
+flags: {}
+
+extra-package-dbs: []

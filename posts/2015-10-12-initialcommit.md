@@ -1,5 +1,5 @@
 ---
-title: opaleye-trans: An Opaleye Monad Transformer
+title: opaleye-trans - An Opaleye Monad Transformer
 ---
 
 
