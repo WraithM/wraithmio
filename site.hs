@@ -13,24 +13,22 @@ main = hakyll $ do
         route idRoute
         compile copyFileCompiler
 
-    match "sass/default.scss" $ do
-        route $ constRoute "css/default.css"
-        compile compressScssCompiler
-
     match "css/*.css" $ do
         route idRoute
         compile compressCssCompiler
 
+    match "templates/*" $ compile templateCompiler
+
     match (fromList ["resume.md", "contact.md", "about.md"]) $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ demotedPandoc
             >>= loadAndApplyTemplate "templates/other.html" defaultContext
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ demotedPandoc
             >>= loadAndApplyTemplate "templates/post.html" postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
@@ -59,19 +57,10 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
-    match "templates/*" $ compile templateCompiler
-
 
 postCtx :: Context String
 postCtx = dateField "date" "%B %e, %Y" <> defaultContext
 
 
-compressScssCompiler :: Compiler (Item String)
-compressScssCompiler = fmap compressCss <$> (getResourceString >>= withItemBody runSass)
-  where
-    runSass = unixFilter "sass"
-        [ "-s"
-        , "--scss"
-        , "--style", "compressed"
-        , "--load-path", "sass"
-        ]
+demotedPandoc :: Compiler (Item String)
+demotedPandoc = fmap demoteHeaders <$> pandocCompiler
