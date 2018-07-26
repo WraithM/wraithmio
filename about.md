@@ -19,5 +19,5 @@ My general interests include:
 - Mathematics
 - Computer graphics
 - Rock climbing
-- [Emacs](https://github.com/WraithM/emacs.d) / [vim](https://github.com/WraithM/dotfiles/blob/master/.vimrc)
+- [Emacs](https://github.com/WraithM/emacs.d) / [vim](https://github.com/WraithM/dotfiles/blob/master/vim/.config/nvim/init.vim)
 - Human languages (Icelandic, German, and Japanese)
