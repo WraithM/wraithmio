@@ -11,20 +11,13 @@ phenomena.
 
 My general interests include:
 
-- Haskell
 - Bitcoin
-- Cryptography
-- Security
+- Haskell
+- Cryptography and security
+- Compilers and programming languages
 - Physics
 - Mathematics
-- Philosophy
-- Types
-- Compilers
-- Functional Reactive Programming
-- The web
-- Graphics
-- Oculus and virtual reality
-- Climbing
+- Computer graphics
+- Rock climbing
 - [Emacs](https://github.com/WraithM/emacs.d) / [vim](https://github.com/WraithM/dotfiles/blob/master/.vimrc)
 - Human languages (Icelandic, German, and Japanese)
-- CS:GO
