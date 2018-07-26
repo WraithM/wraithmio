@@ -1,6 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import           Data.Monoid
 import           Hakyll
 
 
