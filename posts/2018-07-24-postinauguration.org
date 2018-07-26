@@ -1,0 +1,39 @@
+---
+title: First Post
+---
+
+* Top level
+
+What is up?
+
+** This is a test section
+
+Lorem ipsem whatever
+
+#+BEGIN_SRC haskell
+f :: Int -> Int
+f 0 = 1
+f n = n * f (n - 1)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (defun f (n) (if (= n 0) 1 (* n (f (- n 1)))))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :results output
+  (print (f 3))
+#+END_SRC
+
+#+RESULTS:
+:
+: 6
+
+\alpha \to \beta
+
+$$\LaTeX$$
+
+# Yo, what's up[fn:1]
+
+$$\frac{n!}{k!(n-k)!} = \binom{n}{k}$$
+
+# [fn:1] This is a footnote
