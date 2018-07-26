@@ -38,7 +38,11 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
 
-            let indexCtx = listField "posts" postCtx (return posts) <> defaultContext
+            let postsField = listField "posts" postCtx (return posts)
+                indexCtx =
+                    if not (null posts)
+                    then postsField <> defaultContext
+                    else defaultContext
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
