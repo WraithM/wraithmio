@@ -9,9 +9,12 @@ main = hakyll $ do
     match "images/*" copyFiles
     match "js/*" copyFiles
 
-    match "css/*.css" $ do
+    match "css/*.css" $ compile compressCssCompiler
+    create ["style.css"] $ do
         route idRoute
-        compile compressCssCompiler
+        let stringConcat = mconcat :: [String] -> String
+        compile $ makeItem . stringConcat . map itemBody =<< loadAll "css/*.css"
+
 
     match "templates/*" $ compile templateCompiler
 
