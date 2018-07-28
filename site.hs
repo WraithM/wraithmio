@@ -1,5 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+module Main where
+
 import           Control.Monad ((>=>))
 import           Hakyll
 
@@ -15,7 +17,6 @@ main = hakyll $ do
         let stringConcat = mconcat :: [String] -> String
         compile $ makeItem . stringConcat . map itemBody =<< loadAll "css/*.css"
 
-
     match "templates/*" $ compile templateCompiler
 
     match (fromList ["resume.md", "contact.md", "about.md"]) $ do
@@ -29,9 +30,7 @@ main = hakyll $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
-
             let archiveCtx = listField "posts" postCtx (return posts) <> defaultContext
-
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= relativizeDefault
@@ -42,14 +41,13 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll "posts/*"
 
             let postsField = listField "posts" postCtx (return posts)
-                indexCtx =
-                    if not (null posts)
-                    then postsField <> defaultContext
-                    else defaultContext
+                indexCtx = applyWhen (not $ null posts) (postsField <>) defaultContext
 
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= relativizeDefault
+            getResourceBody >>= applyAsTemplate indexCtx >>= relativizeDefault
+
+
+applyWhen :: Bool -> (a -> a) -> a -> a
+applyWhen p f = if p then f else id
 
 
 copyFiles :: Rules ()
