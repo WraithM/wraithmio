@@ -46,8 +46,8 @@ title: Resume
 * *Languages:* Haskell, Java, C, C++, JavaScript, OCaml, MATLAB, Mathematica,
   perl, emacs lisp, LaTeX, bash, awk, x86, ARM, MIPS, SPARC
 * *Tools:* git, hg, svn, cabal, stack, make, cmake, ant,
-  [emacs](https://github.com/WraithM/emacs.d),
-  [vim](https://github.com/WraithM/dotfiles/blob/master/.vimrc), JIRA
+  [emacs](https://github.com/wraithm/emacs.d),
+  [vim](https://github.com/wraithm/dotfiles/blob/master/.vimrc), JIRA
 * *Libraries:* Snap, ØMQ, STM, OpenGL, GLSL, SDL, Swing, ncurses, Android SDK,
   Enterprise Java
 
@@ -61,10 +61,10 @@ title: Resume
 [Slip Statistics of Dislocation Avalanches Under Different Loading
 Modes](http://journals.aps.org/pre/abstract/10.1103/PhysRevE.91.042403)
 Phys. Rev. E **91**, (2015).
-* J. Antonaglia, X. Xie, G. Schwarz, M. Wraith, J. Qiao, Y. Zhang, P. Liaw, J. Uhl, K. Dahmen. 
+* J. Antonaglia, X. Xie, G. Schwarz, M. Wraith, J. Qiao, Y. Zhang, P. Liaw, J. Uhl, K. Dahmen.
 [Tuned Critical Avalanche Scaling in Bulk Metallic Glasses.](http://www.nature.com/srep/2014/140317/srep04382/full/srep04382.html)
 Sci. Rep. **4**, (2014).
-* J. Kim, X. Gu, M. Wraith, J. Uhl, K. Dahmen, J. Greer. 
+* J. Kim, X. Gu, M. Wraith, J. Uhl, K. Dahmen, J. Greer.
 [Suppression of Catastrophic Failure in Metallic Glass–Polyisoprene Nanolaminate Containing Nanopillars.](http://onlinelibrary.wiley.com/doi/10.1002/adfm.201103050/abstract)
 Adv. Func. Mater. **22** (9), 1972-1980 (2012).
 
